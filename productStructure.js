@@ -17,7 +17,7 @@ module.exports = () => {
   const product = products.reduce((acc, cur) => {
     cur = cur.split('-')
     
-    if (acc[cur[0]] != undefined && acc[cur[0]].hasOwnProperty(cur[1])) {
+    if (acc[cur[0]] != undefined && cur[1] in acc[cur[0]]) {
       return acc = { ...acc, [cur[0]]: {...acc[cur[0]], [cur[1]]: acc[cur[0]][cur[1]]+1 } }
     }
 
